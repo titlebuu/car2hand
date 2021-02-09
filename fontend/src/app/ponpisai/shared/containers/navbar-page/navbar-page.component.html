@@ -1,0 +1,54 @@
+<div class="header-top navbar-page">
+    <div class="pc">
+        <span>
+            เปิดทำการทุกวัน : จันทร์-เสาร์ 08.00-18.00 น. | สาขาโพนพิสัย : 092-339-6549 | สาขาหนองคาย : 084-515-2434
+        </span>
+        <span style="padding-left:5px;"><img src="assets/i2.png" width="27px" (click)="toFacebook()"></span>
+        <span style="padding-left:5px;"><img src="assets/i3.png" width="27px" (click)="toLine()"></span>
+        <span style="padding-left:5px;"><img src="assets/i4.png" width="27px"></span>
+    </div>
+    <div class="phone">
+        <div>เปิดทำการทุกวัน : จันทร์-เสาร์ 08.00-18.00 น.</div>
+        <div>สาขาโพนพิสัย : 092-339-6549</div>
+        <div>สาขาหนองคาย : 084-515-2434</div>
+        <div>
+            <span style="padding-left:5px;"><img src="assets/i2.png" width="27px" (click)="toFacebook()"></span>
+            <span style="padding-left:5px;"><img src="assets/i3.png" width="27px" (click)="toLine()"></span>
+            <span style="padding-left:5px;"><img src="assets/i4.png" width="27px"></span>
+        </div>
+    </div>
+</div>
+<div style="text-align: right;">
+    <button class="btn-branch" (click)="ponpisai()" [ngClass]="{'routActive': true }">สาขาโพนพิสัย</button>
+    <button class="btn-branch" (click)="nongkhai()" [ngClass]="{'routActive': false }">สาขาหนองคาย</button>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#" style="width: 100px;"></a>
+    <img src="assets/logo.png" class="logo">
+    <button #navbarToggler class="navbar-toggler navbar-toggler-right  navbar-dark" type="button" data-toggle="collapse"
+        data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li><a (click)="collapseNav()" class="nav-link" [routerLink]="['home']"><b>หน้าแรก</b></a></li>
+            <li><a (click)="collapseNav()" class="nav-link" [routerLink]="['about']"><b>เกี่ยวกับเรา</b></a></li>
+            <li><a (click)="collapseNav()" class="nav-link" [routerLink]="['car']"><b>รถทั้งหมด</b></a></li>
+            <li><a (click)="collapseNav()" class="nav-link" [routerLink]="['promotion']"><b>โปรโมชั่น</b></a></li>
+            <li><a (click)="collapseNav()" class="nav-link" [routerLink]="['reviews']"><b>รีวิว</b></a></li>
+            <li><a (click)="collapseNav()" class="nav-link" [routerLink]="['contact']"><b>ติดต่อเรา</b></a></li>
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Dropdown link
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+</nav>

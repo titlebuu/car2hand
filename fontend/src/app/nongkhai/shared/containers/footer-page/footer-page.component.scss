@@ -1,0 +1,108 @@
+@import "./../../scss/main.scss";
+
+.footer {
+    // margin-top: 60px;
+}
+
+.copyright {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    background-color: $main-color;
+    width: 100%;
+}
+
+.end-yellow {
+    margin-top: 3px;
+    background-color: $yellow;
+    height: 7px;
+    width: 100%;
+}
+
+.fy {
+    color: $yellow;
+}
+
+.f1 {
+    width: 100%;
+    text-align: center;
+    color: $yellow;
+    font-size: 20px;
+}
+
+.f2 {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.bd {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #333;
+}
+
+.menu-footer {
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-footer:hover {
+    color: $yellow;
+}
+
+.face {
+    border-radius: 50%;
+    background-color: #3c5a98;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    padding-left: 15px;
+    padding-top: 2px;
+}
+
+.mg {
+    margin-top: 40px;
+}
+
+.btn-admin {
+    height: 50px;
+    width: 100%;
+    background-color: $yellow;
+    color: $main-color;
+    border: unset;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.messanger-pc {
+    display: block;
+}
+
+.messanger-phone {
+    margin: 0px 12px;
+    padding: 0px;
+    position: fixed;
+    z-index: 2147483644;
+    bottom: 24px;
+    top: auto;
+    right: 12px;
+    height: 60px;
+    width: 60px;
+    border-radius: 29px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px 0px;
+    background: none;
+    display: none;
+}
+
+@media only screen and (max-width: 991px) {
+    .messanger-phone {
+        display: block;
+    }
+    .messanger-pc {
+        display: none !important;
+    }
+}

@@ -1,0 +1,27 @@
+$main-color: #970005;
+$yellow: #ffea00;
+$background-color: #000;
+$background-clear: gray;
+
+.gardient-brand-color {
+    background: rgb(223, 222, 222);
+    background: -moz-linear-gradient(
+        0deg,
+        rgba(223, 222, 222, 1) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(223, 222, 222, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        0deg,
+        rgba(223, 222, 222, 1) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(223, 222, 222, 1) 100%
+    );
+    background: linear-gradient(
+        0deg,
+        rgba(223, 222, 222, 1) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(223, 222, 222, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b9b9b9",endColorstr="#b9b9b9",GradientType=1);
+}

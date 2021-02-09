@@ -1,0 +1,170 @@
+@import "./../../../../../shared/scss/main.scss";
+
+input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 15px;
+    border-style: solid;
+    outline: none;
+    width: 100%;
+    border-color: $background-clear;
+}
+
+.btn {
+    width: 70px;
+    height: 35px;
+    padding: 4px;
+    background-color: $background-clear;
+}
+
+.btn-add {
+    height: 50px;
+    width: 100%;
+    background-color: $yellow;
+    color: $main-color;
+    border: unset;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.btn-clear {
+    height: 50px;
+    width: 162px;
+    background-color: $background-clear;
+    color: #fff;
+    border: unset;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.myLabel {
+    border-radius: 4px;
+    padding: 2px 5px;
+    margin: 2px;
+    background: $yellow;
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 20px;
+    color: $main-color;
+}
+
+.myLabel:hover {
+    background: $yellow;
+    color: $main-color;
+}
+
+.myLabel:active {
+    background: $yellow;
+    color: $main-color;
+}
+
+label.myLabel input[type="file"] {
+    position: absolute;
+    top: -1000px;
+    display: none;
+    color: $main-color;
+}
+
+.myLabel2 {
+    border-radius: 4px;
+    padding: 2px 5px;
+    margin: 2px;
+    background: $yellow;
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 20px;
+    color: $main-color;
+}
+
+.myLabel2:hover {
+    background: $yellow;
+    color: $main-color;
+}
+
+.myLabel2:active {
+    background: $yellow;
+    color: $main-color;
+}
+
+label.myLabel2 input[type="file"] {
+    position: absolute;
+    top: -1000px;
+    display: none;
+    color: $main-color;
+}
+
+.table {
+    width: 100%;
+    th {
+        width: 100%;
+        color: #fff;
+    }
+    td {
+        width: 100%;
+        color: #fff;
+    }
+}
+
+.add-models {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 10px;
+    width: 150px;
+    background-color: $yellow;
+    color: $main-color;
+    border: unset;
+    border-radius: 50px;
+    font-size: 15px;
+}
+
+.btn-reds {
+    background-color: $main-color;
+    color: #fff;
+}
+
+.btn {
+    border-radius: 15px;
+}
+
+.success {
+    border-color: $yellow !important;
+}
+
+select {
+    background: linear-gradient(45deg, transparent 50%, $yellow 50%),
+        linear-gradient(135deg, $yellow 50%, transparent 50%), linear-gradient(to right, #000, #000);
+    background-position: calc(100% - 21px) calc(1em + 2px), calc(100% - 16px) calc(1em + 2px), 100% 0;
+    background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+    background-repeat: no-repeat;
+    color: #fff;
+    border: thin solid $background-clear;
+    border-width: 2px;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    outline: none;
+    border-radius: 30px;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    option {
+        padding: 105px;
+        background-color: #000;
+        line-height: 2.5em;
+    }
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}

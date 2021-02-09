@@ -1,0 +1,156 @@
+<div class="row">
+    <div class="col-12">
+        <div class="title-header" id="about">
+            <div class="text-header">
+                <i><b>{{cars?.car?.carName}}</b></i>
+            </div>
+            <hr class="hr">
+        </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12">
+        <div class=" branch"><b> สาขา : {{cars?.car?.branch || ''}}</b></div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-7">
+        <div id="carouselExampleIndicators" class="carousel slide  center w-100" data-ride="carousel"
+            data-interval="false">
+            <div class="carousel-inner center w-100" *ngIf="cars?.files">
+                <div class="carousel-item" *ngFor="let item of cars?.files; let i=index"
+                    (click)="openModal(template,item.path)" [ngClass]="{'active': i==0}">
+                    <img class="d-block w-100" src="{{item.path}}">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <div class="pt-4 pb-5" style="width: 100%;">
+                <div class="row carousel-indicators">
+                    <div class="col-4 col-xs-3 col-md-3 item w-100" *ngFor="let item of cars?.files; let i=index"
+                        (click)="scrollToView()">
+                        <img src="{{item.path}}" height="70px" class="center" data-target="#carouselExampleIndicators"
+                            attr.data-slide-to="{{i}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-5">
+        <h3 class="yellow"><b>สเปครถ</b></h3>
+        <div>
+            <table class="table" color="#FFF">
+                <tbody>
+                    <tr>
+                        <td><img src="/assets/car-detail/t1.png" width="25px"></td>
+                        <td>ยีห้อ</td>
+                        <td>{{brandNameTh}}</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/assets/car-detail/t2.png" width="25px"></td>
+                        <td>รุ่นรถ</td>
+                        <td>{{modelsNameTh}}</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/assets/car-detail/t3.png" width="25px"></td>
+                        <td>ปี</td>
+                        <td>{{cars?.car?.years}}</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/assets/car-detail/t4.png" width="25px"></td>
+                        <td>ขนาดเครื่องยนต์</td>
+                        <td>{{cars?.car?.size | number : '1.0'}}</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/assets/car-detail/t5.png" width="25px"></td>
+                        <td>ระบบเกียร์</td>
+                        <td>{{cars?.car?.gear}}</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/assets/car-detail/t6.png" width="25px"></td>
+                        <td>เลขไมล์</td>
+                        <td>{{cars?.car?.mileage | number : '1.0'}}</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/assets/car-detail/t7.png" width="20px" height="30px"></td>
+                        <td>สี</td>
+                        <td>{{cars?.car?.color}}</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/assets/car-detail/t8.png" width="25px"></td>
+                        <td>ทะเบียน</td>
+                        <td>{{cars?.car?.numberPlate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="title-header">
+            <div class="text-header-md" style="font-size: 25px;">
+                <b>รายละเอียดราคา</b>
+            </div>
+            <hr class="hr">
+        </div>
+    </div>
+    <div class="col-12">
+        <table class="table table-bordered" color="#FFF">
+            <thead>
+                <tr>
+                    <th class="bg-yellow black font-md" style="width:40%">ราคา</th>
+                    <th class="bg-red" style="font-family: Kanit-Bold;font-size: 30px;">
+                        {{cars?.car?.price | number : '1.0'}} บาท
+                    </th>
+                </tr>
+                <tr>
+                    <th class="bg-yellow black font-md">เงินดาวน์</th>
+                    <th class="bg-red font-md">{{cars?.car?.downPayment | number : '1.0'}} บาท</th>
+                </tr>
+                <tr>
+                    <th class="bg-red font-md">ระยะเวลาผ่อนชำระ</th>
+                    <th class="bg-red font-md">ผ่อน {{cars?.car?.timePayment}} งวด</th>
+                </tr>
+                <tr>
+                    <th class="bg-yellow black font-md">อัตราผ่อนชำระต่อเดือน</th>
+                    <th class="bg-red font-md">{{convertNumber(cars?.car?.monthPayment) | number : '1.0'}}/เดือน</th>
+                </tr>
+                <tr>
+                    <th class="bg-yellow black font-md">โปรโมชั่น/ของแถม</th>
+                    <th class="bg-red font-md">{{cars?.car?.description}}</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="col-12">
+        <div class="title-header">
+            <div class="text-header-md" style="font-size: 25px;">
+                <b>ดูรถแนะนำอื่นๆ</b>
+            </div>
+            <hr class="hr">
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row" *ngIf="carsExlample?.rows && carsExlample?.rows?.length > 0">
+            <div class="col-12 col-md-12 col-lg-4" *ngFor="let item of carsExlample?.rows; let i=index"
+                (click)="toDetail(item)">
+                <div class="show-car">
+                    <div style="padding-top: 30px;">
+                        <img [src]="item.pathShow" alt="" class="img-car">
+                    </div>
+                    <div class="name ellips"><b>{{item.carName}}</b></div>
+                    <div class="condition"><b>ผ่อน {{convertNumber(item.monthPayment) | number : '1.0'}}x{{item.timePayment}} งวด</b>
+                    </div>
+                    <div class="btns"><button class="btn-red"><b>ดูรายละเอียด</b></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #template style="width: 100%;">
+    <div class="modal-img-show" (click)="modalImg= '';modalRef.hide()" @aunjaiTrigger>
+        <img src="{{modalImg}}" alt="">
+    </div>
+</ng-template>

@@ -1,0 +1,11 @@
+<carousel [interval]="30000">
+    <slide>
+        <video class="pc" style="width: 100%;" loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+            <source src="assets/video/slide.mp4" type="video/mp4">
+        </video>
+        <img class="phone w-100" src="assets/gif/slide.gif" alt="">
+    </slide>
+    <slide>
+        <img src="assets/slide3.jpg" alt="second slide" style="display: block; width: 100%;">
+    </slide>
+</carousel>

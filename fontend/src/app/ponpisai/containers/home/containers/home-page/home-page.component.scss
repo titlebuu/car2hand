@@ -1,0 +1,23 @@
+@import "./../../../../shared/scss/main.scss";
+
+.content {
+    color: #fff;
+}
+
+.name {
+    color: $main-color;
+}
+
+.condition {
+    color: #000;
+}
+
+.btns {
+    margin: 20px;
+}
+
+.btn-red {
+    height: 40px;
+    width: 100%;
+    color: #fff;
+}

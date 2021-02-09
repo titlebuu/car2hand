@@ -1,0 +1,71 @@
+@import "./../../../../shared/scss/main.scss";
+
+.content {
+    color: #fff;
+}
+.text-header-md {
+    font-size: 30px;
+    color: $yellow;
+}
+.show-car {
+    text-align: center;
+    margin: 5px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    // height: 320px;
+    border-style: solid;
+    border-color: $main-color;
+    border-width: 1px;
+}
+
+.name {
+    color: $main-color;
+}
+
+.condition {
+    color: #000;
+}
+
+.btns {
+    margin: 20px;
+}
+
+.btn-red {
+    height: 40px;
+    width: 100%;
+    color: #fff;
+}
+.f25 {
+    font-size: 25px;
+}
+.pagination {
+    display: inline-block;
+    padding: 5px 7px;
+    // text-align: right;
+}
+
+.pagination a {
+    color: rgb(255, 255, 255);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: $main-color;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.iframe-video {
+    height: 230px;
+}
+
+@media only screen and (max-width: 991px) {
+    .iframe-video {
+        height: 280px;
+    }
+}

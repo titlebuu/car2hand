@@ -1,0 +1,147 @@
+@import "./../../../../shared/scss/main.scss";
+
+.content {
+    color: #fff;
+}
+
+.name {
+    color: $main-color;
+}
+
+.condition {
+    color: #000;
+}
+
+.btns {
+    margin: 20px;
+}
+
+.btn-red {
+    height: 40px;
+    width: 100%;
+    color: #fff;
+}
+
+.carousel-indicators {
+    position: static;
+
+    .item {
+        margin-top: 10px;
+        &.active {
+            background: transparent;
+
+            img {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+.table-bordered td,
+.table-bordered th {
+    border: 5px solid #000000;
+    vertical-align: middle;
+}
+
+.table {
+    color: #fff;
+    td {
+        font-size: 17px;
+        vertical-align: middle;
+    }
+}
+
+.font-md {
+    // font-family: Kanit-Bold;
+    font-size: 22px !important;
+}
+
+.detail-price {
+    font-size: 20px;
+}
+
+.bg-red {
+    background-color: $main-color;
+}
+
+.bg-yellow {
+    background-color: $yellow;
+}
+
+.carousel-indicators {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-top: 10px !important;
+}
+
+.carousel-control-prev {
+    position: absolute;
+    top: -200px;
+}
+
+.carousel-control-next {
+    position: absolute;
+    top: -200px;
+}
+
+// @media only screen and (max-width: 991px) {
+//     // .carousel-control-prev {
+//     //     top: -200px;
+//     // }
+//     // .carousel-control-next {
+//     //     top: -200px;
+//     // }
+// }
+
+@media only screen and (max-width: 768px) {
+    .carousel-control-prev {
+        top: -300px;
+    }
+    .carousel-control-next {
+        top: -300px;
+    }
+}
+
+.modal-content {
+    background-color: unset !important;
+    margin-left: -30vh;
+}
+
+.modal-img-show {
+    // position: absolute;
+    // margin: auto;
+    // text-align: center;
+    // justify-items: center;
+
+    img {
+        position: absolute;
+        $widths: 100vh;
+        width: $widths;
+        margin-left: -25vh;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .modal-img-show {
+        margin: auto;
+
+        // position: fixed;
+        // top: 10px;
+        // left: 10px;
+        // right: 10px;
+        // bottom: 10px;
+    }
+}
+
+.branch {
+    text-align: left;
+    color: $yellow;
+    background-color: #0e0e0e;
+    border-style: solid;
+    font-size: 30px;
+    border-color: #ffffff;
+    border-width: 1px;
+    margin: 10px auto 10px auto;
+    padding-left: 10px;
+    width: 100%;
+}

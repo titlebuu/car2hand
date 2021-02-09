@@ -1,0 +1,31 @@
+@import "./../../../../../shared/scss/main.scss";
+
+input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 15px;
+    border-style: solid;
+    outline: none;
+    width: 100%;
+}
+
+.btn-login {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+    background-color: $yellow;
+    color: $main-color;
+    border: unset;
+    border-radius: 50px;
+    font-size: 15px;
+}
+
+.login {
+    input,
+    .btn-login {
+        max-width: 350px;
+    }
+}

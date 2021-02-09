@@ -1,0 +1,143 @@
+<div class="row">
+    <div class="col-12">
+        <div class="title-header" id="review">
+            <div *ngIf="method !== 'edit'" class="text-header"><i><b>เพิ่มรถเข้าใหม่</b></i></div>
+            <div *ngIf="method === 'edit'" class="text-header"><i><b>แก้ไขข้อมูล</b></i></div>
+            <hr class="hr">
+        </div>
+    </div>
+    <div class="col-12 mt-5">
+        <div class="row">
+            <div class="col-12 col-md-2 col-lg-2"></div>
+            <div class="col-12 col-md-8 col-lg-8 center">
+                <div *ngIf="uploadFile.length"><img [src]="uploadFile[0].file" alt="" width="250px;"></div>
+                <div *ngIf="!uploadFile?.length"><img src="assets/default.jpg" alt="" height="200px;" width="200px;">
+                </div>
+                <label class="myLabel" style="cursor: pointer">
+                    <input #myInput style="cursor: pointer" type="file" [(ngModel)]="file"
+                        keyup="changeListener($event)" (change)="changeListener($event)">
+                    <span style="cursor: pointer"> อัพโหลดรูปภาพ</span>
+                </label>
+            </div>
+            <div class="col-12 col-md-2 col-lg-2"></div>
+        </div>
+    </div>
+    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 center">
+        <select [(ngModel)]="branch" [ngClass]="{ 'success' : branch }">
+            <option value="โพนพิสัย">สาขาโพนพิสัย</option>
+            <!-- <option value="หนองคาย">สาขาหนองคาย</option> -->
+        </select>
+        <select [disabled]="method === 'edit'" [(ngModel)]="brandId" (change)="changeCar()"
+            [ngClass]="{ 'success' : brandId > 0 }">
+            <option *ngFor="let item of brand; let i=index" value="{{item.brandId}}">{{item.brandNameEn | uppercase}}
+            </option>
+        </select>
+        <select [disabled]="method === 'edit'" [(ngModel)]="modelsId" [ngClass]="{ 'success' : modelsId > 0 }"
+            style="width: 77%;margin-right: 3%;">
+            <option *ngFor="let item of models; let i=index" value="{{item.modelsId}}">{{item.modelsNameEn}}</option>
+        </select>
+        <button [disabled]="method === 'edit'" style="width: 20%;" class="add-models" data-toggle="modal"
+            data-target="#exampleModal">
+            + เพิ่ม
+        </button>
+        <select [(ngModel)]="years" [ngClass]="{ 'success' : years }">
+            <option *ngFor="let item of year ; let i=index" value="{{item.id}}">{{item.name}}</option>
+        </select>
+        <input type="text" [(ngModel)]="numberPlate" placeholder="ทะเบียน" [ngClass]="{ 'success' : numberPlate }">
+        <input type="text" [(ngModel)]="price" placeholder="ราคา" [ngClass]="{ 'success' : price }"
+            (keypress)="numberOnly($event)" (paste)="numberOnly($event)">
+        <input type="text" [(ngModel)]="downPayment" placeholder="เงินดาวน์" [ngClass]="{ 'success' : downPayment }"
+            (keypress)="numberOnly($event)" (paste)="numberOnly($event)">
+        <input type="text" [(ngModel)]="description" placeholder="โปรโมชั่น/ของแถม"
+            [ngClass]="{ 'success' : description }">
+    </div>
+    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 center">
+        <input type="text" [(ngModel)]="carName" placeholder="ชื่อ" [ngClass]="{ 'success' : carName }">
+        <input type="text" [(ngModel)]="size" placeholder="ขนาดเครื่องยนต์" [ngClass]="{ 'success' : size }"
+            (keypress)="numberOnly($event)" (paste)="numberOnly($event)">
+        <select [(ngModel)]="gear" [ngClass]="{ 'success' : gear }">
+            <option value="">ระบบเกียร์</option>
+            <option value="อัตโนมัติ">อัตโนมัติ</option>
+            <option value="ธรรมดา">ธรรมดา</option>
+        </select>
+        <input type="text" [(ngModel)]="mileage" placeholder="เลขไมล์" [ngClass]="{ 'success' : mileage }"
+            (keypress)="numberOnly($event)" (paste)="numberOnly($event)">
+        <input type="text" [(ngModel)]="color" placeholder="สี" [ngClass]="{ 'success' : color }">
+        <select [(ngModel)]="timePayment" [ngClass]="{ 'success' : timePayment }">
+            <option value="84">ระยะเวลาผ่อน 84 เดือน</option>
+            <option value="72">ระยะเวลาผ่อน 72 เดือน</option>
+            <option value="60">ระยะเวลาผ่อน 60 เดือน</option>
+            <option value="48">ระยะเวลาผ่อน 48 เดือน</option>
+            <option value="36">ระยะเวลาผ่อน 36 เดือน</option>
+            <option value="24">ระยะเวลาผ่อน 24 เดือน</option>
+            <option value="12">ระยะเวลาผ่อน 12 เดือน</option>
+        </select>
+        <input type="text" [(ngModel)]="monthPayment" placeholder="อัตราการผ่อนฃำระต่อเดือน"
+            [ngClass]="{ 'success' : monthPayment }" (keypress)="numberOnly($event)" (paste)="numberOnly($event)">
+    </div>
+    <div class="col-12 mt-5">
+        <div class="row">
+            <div class="col-12 col-md-3 col-lg-3">
+                <label class="myLabel2" style="cursor: pointer">
+                    <input #myInput style="cursor: pointer" type="file" [(ngModel)]="fileArray"
+                        keyup="changeListenerArray($event)" (change)="changeListenerArray($event)" multiple>
+                    <span style="cursor: pointer"> อัพโหลดรูปภาพ</span>
+                </label>
+                <button class="btn-clear" (click)="clearImage()">ลบรูปภาพ</button>
+            </div>
+            <div class="col-12 col-md-9 col-lg-9 mt-3" style="margin-bottom: 40px">
+                <p *ngIf="uploadFileArray.length" style="color: #fff;">จำนวนรูปภาพ : {{ uploadFileArray?.length }}</p>
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th># &nbsp; ไฟล์</th>
+                            <th>ชื่อ</th>
+                            <th>ขนาด</th>
+                            <th>ลบ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let item of uploadFileArray; let i=index">
+                            <tr *ngIf="item?.method !== 'delete' && item?.status !== 'D'">
+                                <td> {{i+1}} &nbsp;&nbsp; <img src="{{item.file}}" alt="" width="50px;"></td>
+                                <td *ngIf="item.name"><strong>{{ item.name }}</strong></td>
+                                <td *ngIf="item.size" nowrap>{{ item.size/1024/1024 | number:'.2' }} MB</td>
+                                <td><button (click)="delArray(i)" class="btn">ลบ</button></td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="center w-100 mt-3" style="color:#FFF;">{{msg}}</div>
+    <div class="col-12 mt-2"><button class="btn-add" (click)="submit()"><span><b>บันทึก </b></span></button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header center">
+                <h5 class="modal-title center" style="color: #FFF;">แบบฟอร์ม</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <select [(ngModel)]="brandId" (change)="changeCar()">
+                    <option *ngFor="let item of brand; let i=index" value="{{item.brandId}}">
+                        {{item.brandNameEn | uppercase}}
+                    </option>
+                </select>
+                <input type="text" [(ngModel)]="modelsAdd" placeholder="ชื่อ">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                <button type="button" data-dismiss="modal" class="btn btn-reds" (click)="submitModal()">บันทึก</button>
+            </div>
+        </div>
+    </div>
+</div>

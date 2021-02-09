@@ -1,0 +1,211 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./app//ponpisai/shared/scss/main.scss";
+@import "./app//ponpisai/shared/scss/fonts.scss";
+
+.body {
+    background-color: $background-color;
+    z-index: 1;
+    // overflow-x: hidden;
+}
+
+.navbar {
+    z-index: 9;
+}
+
+.centers {
+    text-align: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-102 {
+    width: 100%;
+    height: 30px;
+}
+
+.w-101 {
+    width: 40%;
+    height: 35px;
+    background: $background-color;
+    border-radius: 30px;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.btn-red {
+    background-color: $main-color;
+    border: unset;
+    border-radius: 0px !important;
+}
+
+.btn-red:hover {
+    background-color: $yellow;
+    color: $main-color !important;
+}
+
+.yellow {
+    color: $yellow;
+}
+
+.title-header {
+    // font-size: 50px;
+    color: $yellow;
+    .text-header {
+        font-size: 50px;
+        margin-bottom: -30px;
+    }
+    .text-header-md {
+        font-size: 25px;
+        margin-bottom: -20px;
+    }
+}
+
+.title-header1 {
+    color: $yellow;
+    .text-headerfont {
+        font-size: 40px;
+        margin-bottom: -20px;
+    }
+}
+
+.hr {
+    width: 100%;
+    color: $yellow;
+    border-width: 3px;
+    border-color: $yellow;
+}
+
+.btn-view {
+    min-width: 100px;
+    height: 30px;
+    background: $yellow;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 20px;
+    color: #000;
+}
+
+.black {
+    color: #000;
+}
+
+.white {
+    color: #fff;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.mt-1 {
+    margin-top: 10px;
+}
+
+.mt-2 {
+    margin-top: 20px;
+}
+
+.mt-3 {
+    margin-top: 30px;
+}
+
+.mt-4 {
+    margin-top: 40px;
+}
+
+.mt-5 {
+    margin-top: 50px;
+}
+
+input {
+    background: $background-color;
+    border-radius: 30px;
+    color: #fff;
+}
+
+.pagination {
+    float: right;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: $main-color !important;
+    border-color: $yellow !important;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #fff !important;
+    background-color: $background-color !important;
+    border: unset !important;
+}
+
+.page-item.active .page-link:hover {
+    color: $main-color !important;
+    background-color: $yellow !important;
+    border-color: $yellow !important;
+}
+
+.page-link:hover {
+    color: $main-color !important;
+    background-color: $yellow !important;
+    border: unset !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.ellips {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.modal-content {
+    background-color: #000 !important;
+    border-radius: 2rem !important;
+    border: 3px solid #404040 !important;
+}
+.modal-header {
+    border-bottom: 0px !important;
+}
+
+.modal-footer {
+    border-top: 0px !important;
+}
+
+.img-car {
+    width: 100%;
+    min-height: 175px;
+}
+
+.show-car {
+    text-align: center;
+    margin: 5px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    border-style: solid;
+    border-color: $main-color;
+    border-width: 1px;
+    min-height: 350px;
+}

@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-12">
+        <div class="title-header" id="review">
+            <div class="text-header">
+                <i><b>เข้าสู่ระบบ</b></i>
+            </div>
+            <hr class="hr">
+        </div>
+    </div>
+    <div class="col-12 mt-5 login center">
+        <div><input type="text" placeholder="ชื่อผู้ใช้" [(ngModel)]="username"></div>
+        <div><input type="password" placeholder="รหัสผ่าน" [(ngModel)]="password"></div>
+        <div style="color: #FFF;">{{msg}}</div>
+        <div><button class="btn-login" (click)="submit()"> เข้าสู่ระบบ</button></div>
+    </div>
+</div>

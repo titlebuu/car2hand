@@ -1,0 +1,142 @@
+<div class="title-header">
+    <div class="text-header">
+        <i><b>ติดต่อเรา</b></i>
+    </div>
+    <hr class="hr">
+</div>
+
+<div class="text-header-md">
+    <div class="text-header">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 pc">
+                    <span
+                        [ngClass]="{'type-address-active' : typeAddress === 0 , 'type-address-default' : typeAddress === 1 }"
+                        (click)="typeAddress = 0" class="type-address" style="margin-right: 10px;">
+                        <b><u> สาขาโพนพิสัย </u></b>
+                    </span>
+                    <span
+                        [ngClass]="{'type-address-active' : typeAddress === 1 , 'type-address-default' : typeAddress === 0 }"
+                        (click)="typeAddress = 1" class="type-address contentback" style="margin-left: 10px;">
+                        <b><u> สาขาหนองคาย </u></b>
+                    </span>
+                </div>
+
+                <div class="col-12 phone">
+                    <span
+                        [ngClass]="{'type-address-active' : typeAddress === 0 , 'type-address-default' : typeAddress === 1 }"
+                        (click)="typeAddress = 0" class="type-address contentback">
+                        <b><u> สาขาโพนพิสัย </u></b>
+                    </span>
+                </div>
+                <div class="col-12 phone">
+                    <span
+                        [ngClass]="{'type-address-active' : typeAddress === 1 , 'type-address-default' : typeAddress === 0 }"
+                        (click)="typeAddress = 1" class="type-address contentback">
+                        <b><u> สาขาหนองคาย </u></b>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12" *ngIf="typeAddress === 0">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-6 left w-100">
+            <div class="icon-contact">
+                <img src="assets/contact/tel.png">
+                <b> โทร 084-5152434</b>
+            </div>
+            <div class="icon-contact">
+                <img src="assets/contact/line.png">
+                <b> ไลน์. @ruaysombat</b>
+            </div>
+            <div class="icon-contact">
+                <img src="assets/contact/facebook.png">
+                <b> เฟสบุ๊ค.ruaysombat </b>
+            </div>
+            <div class="icon-contact">
+                <img src="assets/contact/map.png">
+                <b> ถนนชยางกูร ตำบล วัดหลวง อำเภอ โพนพิสัย หนองคาย 43120</b>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 center w-100">
+            <div class="col-12"><img src="assets/contact/หนองคาย.png"></div>
+            <div class="col-12 mt-1"><img (click)="toLine()" src="assets/contact/add-friend.png" alt=""></div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120597.53106213044!2d102.99216722444842!3d17.984039436459117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd483493a5b50907f!2z4Lij4Lin4Lii4Liq4Lih4Lia4Lix4LiV4Li04LiE4Liy4Lij4LmM4LmA4LiL4LmH4LiZ4LmA4LiV4Lit4Lij4LmMIOC5guC4nuC4meC4nuC4tOC4quC4seC4oiDguKPguJbguJTguLUg4Lij4LiW4Liq4Lin4Lii4LiV4LmJ4Lit4LiH4LiX4Li14LmI4Lij4Lin4Lii4Liq4Lih4Lia4Lix4LiV4Li0!5e0!3m2!1sth!2sth!4v1592656072760!5m2!1sth!2sth"
+            width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false"
+            tabindex="0"></iframe>
+    </div>
+</div>
+
+<div class="col-12" *ngIf="typeAddress === 1">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-6 left w-100">
+            <div class="icon-contact">
+                <img src="assets/contact/tel.png">
+                <b> โทร 084-5152434</b>
+            </div>
+            <div class="icon-contact">
+                <img src="assets/contact/line.png">
+                <b> ไลน์. @ruaysombat</b>
+            </div>
+            <div class="icon-contact">
+                <img src="assets/contact/facebook.png">
+                <b> เฟสบุ๊ค.ruaysombat </b>
+            </div>
+            <div class="icon-contact">
+                <img src="assets/contact/map.png">
+                <b> ที่อยู่. 256 ม.12 ตำบลหนองกอมเกาะ อำเภอเมืองหนองคาย จังหวัดหนองคาย 43000 </b>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 center w-100">
+            <div class="col-12"><img src="assets/contact/หนองคาย.png"></div>
+            <div class="col-12 mt-1"><img (click)="toLine()" src="assets/contact/add-friend.png" alt=""></div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4786.001989789013!2d102.76213514008602!3d17.808032356936646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31247d29c7adeaf9%3A0xc978b20bd3873de8!2z4LmA4LiV4LmH4LiZ4LiX4LmM4Lij4Lin4Lii4Liq4Lih4Lia4Lix4LiV4Li04LiE4Liy4Lij4LmM4LmA4LiL4LmH4LiZ4LmA4LiV4Lit4Lij4LmMIOC4q-C4meC4reC4h-C4hOC4suC4og!5e0!3m2!1sth!2sth!4v1588501048169!5m2!1sth!2sth"
+            width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="row" style="margin-top: 10%;">
+        <div class="col-12 col-md-6 col-lg-6">
+            <div class="col-12">
+                <input [(ngModel)]="formName" class="w-100" type="text" placeholder='กรุณากรอกชื่อ'>
+            </div>
+            <div class="col-12">
+                <input [(ngModel)]="formTels" class="w-100" placeholder='กรุณากรอกเบอร์โทรติดต่อกลับ'>
+            </div>
+            <div class="col-12">
+                <input [(ngModel)]="formID" class="w-100" type="text" placeholder='กรุณากรอกไอดีไลน์ หรือ เฟสบุ๊ค'>
+            </div>
+            <div class="col-12">
+                <input [(ngModel)]="formDesc" class="w-100" type="text" placeholder="รายละเอียดเพิ่มเติม">
+            </div>
+            <div class="col-12 center mb-4 mt-2">
+                <div class="row">
+                    <div class="col-12 msg">{{msgDisplay}}</div>
+                    <div class="col-6"><button class="btn-contact" (click)="submit()">ยืนยัน </button></div>
+                    <div class="col-6"><button class="btn-contact" (click)="clear()">ล้างข้อมูล </button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+            <div class="text-headerfont"><b>ฟอร์มติดต่อเรา</b></div>
+            <div class="content-text-from" style="margin-top:10%;">หากมีข้อสงสัยหรือต้องการสอบถามข้อมูล</div>
+            <div class="content-text-from">เกี่ยวกับรถและบริการของเรา กรุณาติดต่อ</div>
+            <div class="content-text-from">สอบถาม เจ้าหน้าที่โดยตรง</div>
+            <div class="content-text-from" style="margin-top: 5%;">โทร.084-515-2434 ไลน์.@ruaysombat</div>
+            <div class="content-text-from" style="margin-top: 5%;">หรือ กรอกข้อมูลติดต่อกลับข้อมูลด่านล่างนี้</div>
+            <div class="content-text-from">เจ้าหน้าที่จะรีบติดต่อกลับ</div>
+        </div>
+    </div>
+</div>

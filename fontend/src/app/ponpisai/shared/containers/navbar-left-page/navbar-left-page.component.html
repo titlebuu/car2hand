@@ -1,0 +1,127 @@
+<div class="row" #testNav>
+    <div class="col-12">
+        <div class="form-search">
+            <div class="centers" style="padding: 5px;">
+                <h5 style="color: #FFF;"><b>ค้นหารถ</b></h5>
+            </div>
+            <div class="form">
+                <div class="col-12" style="padding:5px;">
+                    <h6>ค้นหารถยนต์มือสอง</h6>
+                </div>
+                <!-- <div class="col-12">
+                    <div class="row">
+                        <div class="col-4 t">เลือกสาขา</div>
+                        <div class="col-8 c">
+                            <select [(ngModel)]="formBranch">
+                                <option value="">สาขาทั้งหมด</option>
+                                <option value="โพนพิสัย">สาขาโพนพิสัย</option>
+                                <option value="หนองคาย">สาขาหนองคาย</option>
+                            </select>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4 t">เลือกยีห้อรถ</div>
+                        <div class="col-8 c">
+                            <select [(ngModel)]="formBrand" (change)="changeCar()">
+                                <option *ngFor="let item of brand; let i=index" value="{{item.brandId}}">
+                                    {{item.brandNameEn | uppercase}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4 t">เลือกรุ่นรถ</div>
+                        <div class="col-8 c">
+                            <select [(ngModel)]="formModels">
+                                <option *ngFor="let item of models; let i=index" value="{{item.modelsId}}">
+                                    {{item.modelsNameEn}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4 t">เลือกปีรถ</div>
+                        <div class="col-8 c">
+                            <select [(ngModel)]="formYear">
+                                <option *ngFor="let item of year ; let i=index" value="{{item.id}}">
+                                    {{item.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4 t">เลือกช่วงราคา</div>
+                        <div class="col-8 c">
+                            <select [(ngModel)]="formPriceStart">
+                                <option *ngFor="let item of priceStart; let i=index" value="{{item.id}}">{{item.name}}
+                                </option>
+                            </select>
+                            <select [(ngModel)]="formPriceEnd">
+                                <option *ngFor="let item of priceEnd; let i=index" value="{{item.id}}"
+                                    [disabled]="item.id < formPriceStart">{{item.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" style="padding:5px;padding-top: 15px;">
+                    <button class="btn-red w-100" (click)="search()">
+                        <span><i class="fa fa-search"></i>
+                            <h5><b> ค้นหา</b></h5>
+                        </span>
+                    </button>
+                </div>
+                <div class="col-12" style="padding:5px;">
+                    <button class="btn-clear w-100" (click)="clear()">
+                        <span><i class="fa fa-search"></i>
+                            <h5><b> ล้างข้อมูล</b></h5>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="bg-search">
+            <h5 style="color:#970005;"><b>ค้นหารถตามยีห้อ</b></h5>
+        </div>
+        <div class="centers search-brand">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-4 pd" *ngFor="let item of logoBrand; let i=index"
+                        (click)="searchByBrand(item.brandId)">
+                        <div class="bg">
+                            <img src="{{item.image}}" height="60px" width="auto">
+                            <span class="b-brand"><b>{{item.brandNameEn | uppercase }}</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="centers promotion mr pointer" (click)="toPromotion()">
+            <img src="assets/gif/promotion1.gif" alt="">
+        </div>
+        <div class="centers promotion mr pointer" (click)="toPromotion()">
+            <img src="assets/gif/promotion2.gif" alt="">
+        </div>
+        <div class="picture-facebook centers pointer" (click)="toFacebook()">
+            <img src="assets/face.jpg" alt="">
+        </div>
+        <!-- <div class="facebook centers col-12">
+            <div class="row">
+                <div class="fb-page" data-tabs="timeline,events,messages"
+                    data-href="https://www.facebook.com/ruaysombatcar" data-width="380" data-hide-cover="false"></div>
+            </div>
+        </div> -->
+        <div class="centers pointer promotion mr" (click)="toAbout()">
+            <img src="assets/gif/promotion3.gif" alt="">
+        </div>
+        <div class="centers promotion mr">
+            <img src="assets/gif/call.gif" alt="">
+        </div>
+    </div>
+</div>

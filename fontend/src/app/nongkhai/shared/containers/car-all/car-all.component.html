@@ -1,0 +1,31 @@
+<div class="col-12" id="catAll">
+    <div class="title-header" id="review">
+        <div class="text-header">
+            <i><b>รถทั้งหมด</b></i>
+        </div>
+        <hr class="hr">
+    </div>
+    <div class="col-12 col-md-12 col-lg-12 centers" *ngIf="cars?.length === 0">
+        <span class="not-found centers">ไม่พบข้อมูลที่ค้นหา</span>
+    </div>
+    <div class="row" *ngIf="cars">
+        <div class="col-12 col-md-12 col-lg-4" *ngFor="let item of cars; let i=index" (click)="toDetail(item)">
+            <div class="show-car">
+                <!-- <div><img src="assets/darw.png" style="top:35px;right: 15px;position: absolute;"></div> -->
+                <div style="padding-top: 30px;">
+                    <img [src]="item.pathShow" alt="" class="img-car">
+                </div>
+                <div class="name ellips"><b>{{item.carName}}</b></div>
+                <div class="condition">
+                    <b>ผ่อน {{convertNumber(item.monthPayment) | number : '1.0'}}x{{item.timePayment}} งวด</b>
+                </div>
+                <div class="btns"><button class="btn-red"><b>ดูรายละเอียด</b></button></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12 mright" *ngIf="count && count > 0">
+    <pagination [align]="true" [totalItems]="count" [itemsPerPage]="limit" [boundaryLinks]="true" [maxSize]="200"
+        [firstText]="pageFirstText" [previousText]="pagePreviousText" [nextText]="pageNextText"
+        [lastText]="pageLastText" (pageChanged)="pageChanged($event)"></pagination>
+</div>

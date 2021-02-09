@@ -1,0 +1,55 @@
+<div class="col-12" id="catAll">
+    <div class="title-header" id="review">
+        <div class="text-header">
+            <i><b>จัดการข้อมูลรถทั้งหมด</b></i>
+        </div>
+        <hr class="hr">
+    </div>
+    <button class="btn-add" (click)="toAdd()"><span><b>+ เพิ่มรถเข้าใหม่ </b></span></button>
+    <div class="row" *ngIf="cars">
+        <div class="col-12 col-md-12 col-lg-4" *ngFor="let item of cars; let i=index">
+            <div class="show-car">
+                <!-- <div><img src="assets/darw.png" style="top:35px;right: 15px;position: absolute;"></div> -->
+                <div style="padding-top: 30px;">
+                    <img [src]="item.pathShow" alt="" class="img-car">
+                </div>
+                <div class="name ellips"><b>{{item.carName}}</b></div>
+                <div class="condition"><b>ผ่อน
+                        {{convertNumber(item.monthPayment) | number : '1.0'}}x{{item.timePayment}} งวด</b></div>
+                <div class="btns">
+                    <button class="btn-action-view" (click)="toDetail(item)"><span>ดู</span></button>
+                    <button class="btn-action-edit" (click)="toEdit(item)"><span>แก้ไข</span></button>
+                    <button class="btn-action" (click)="itemsDelete = item" data-toggle="modal"
+                        data-target="#exampleModal"><span>ลบ</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12 mright" *ngIf="count && count > 0">
+    <pagination [align]="true" [totalItems]="count" [itemsPerPage]="limit" [boundaryLinks]="true" [maxSize]="200"
+        [firstText]="pageFirstText" [previousText]="pagePreviousText" [nextText]="pageNextText"
+        [lastText]="pageLastText" (pageChanged)="pageChanged($event)"></pagination>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header center">
+                <h5 class="modal-title center" style="color: #FFF;">คำเตือน</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 style="color:#FFF">คุณแน่ใจหรือไม่ว่าจะลบรถยนต์คันนี้</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                <button type="button" data-dismiss="modal" class="btn btn-reds" (click)="toDelete(itemsDelete)">ตกลง</button>
+            </div>
+        </div>
+    </div>
+</div>

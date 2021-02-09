@@ -1,0 +1,54 @@
+<!-- <div class="row"> -->
+<div class="title-header">
+    <div class="text-header">
+        <i><b>รวยสมบัติ</b></i>
+    </div>
+    <hr class="hr">
+</div>
+<div class="content">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12 col-md-3 col-lg-3">
+                <img src="assets/about.jpg" alt="" width="100%">
+            </div>
+            <div class="col-12 col-md-9 col-lg-9">
+                <h5><b>รวยสมบัติคาร์เซ็นเตอร์ ศูนย์รวมรถยนต์มือสองคุณภาพดี จากประสบการณ์นานกว่าสิบปี
+                        ขายรถราคาถูกสุด รับซื้อรถยนต์มือสองให้ราคาสูง รวยสมบัติคาร์เซ็นเตอร์
+                        มีรถหลากหลายให้เลือกมั่นใจรถทุกคัน สภาพดี รถสวย รถราคาถูก พร้อมการันตีรถสวยทุกคัน คุณภาพเกรดA
+                        มั่นใจหายห่วง
+                    </b>
+                </h5>
+                <div>
+                    <button class="btn-view"><span><i class=""></i>ดูทั้งหมด</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <img src="assets/about_p1.gif" alt="" style="width: 100%;margin-top: 10px;">
+</div>
+<br>
+<div class="title-header">
+    <div class="text-header">
+        <i><b>ยอดขายอันดับ 1</b></i>
+    </div>
+    <hr class="hr">
+</div>
+<div class="col-12">
+    <div class="row" *ngIf="cars">
+        <div class="col-12 col-md-12 col-lg-4" *ngFor="let item of cars; let i=index" (click)="toCarDetail(item)">
+            <div class="show-car">
+                <!-- <div><img src="assets/darw.png" style="top:35px;right: 15px;position: absolute;"></div> -->
+                <div style="padding-top: 30px;">
+                    <img src="{{item.pathShow}}" alt="" class="img-car">
+                </div>
+                <div class="name ellips "><b>{{item.carName}}</b></div>
+                <div class="condition">
+                    <b>ผ่อน {{convertNumber(item.monthPayment) | number : '1.0'}}x{{item.timePayment}} งวด</b>
+                </div>
+                <div class="btns"><button class="btn-red"><b>ดูรายละเอียด</b></button></div>
+            </div>
+        </div>
+    </div>
+</div>

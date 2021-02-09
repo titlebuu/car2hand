@@ -1,0 +1,48 @@
+@import "./../../../../shared/scss/main.scss";
+
+.content {
+    color: #fff;
+}
+.text-header-md {
+    font-size: 30px;
+    color: $yellow;
+}
+
+.name {
+    color: $main-color;
+}
+
+.condition {
+    color: #000;
+}
+
+.btns {
+    margin: 20px;
+}
+
+.btn-red {
+    height: 40px;
+    width: 100%;
+    color: #fff;
+}
+
+.f25 {
+    font-size: 25px;
+}
+
+.pc {
+    display: block;
+}
+
+.phone {
+    display: none;
+}
+
+@media only screen and (max-width: 991px) {
+    .phone {
+        display: block;
+    }
+    .pc {
+        display: none !important;
+    }
+}

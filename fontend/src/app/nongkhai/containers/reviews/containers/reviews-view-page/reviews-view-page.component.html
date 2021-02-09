@@ -1,0 +1,38 @@
+<div id="review">
+    <div class="title-header">
+        <div class="text-header">
+            <i><b>รีวิว</b></i>
+        </div>
+        <hr class="hr">
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-6 center">
+            <iframe width="100%" class="iframe-video"
+                src="https://web.facebook.com/plugins/video.php?href=https%3A%2F%2Fweb.facebook.com%2Fruaysombatcar%2Fvideos%2F519586938704422%2F&show_text=false"
+                width="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowTransparency="false" allow="encrypted-media" allowFullScreen="true">
+            </iframe>
+        </div>
+        <div class="col-md-6 center">
+            <iframe width="100%" class="iframe-video"
+                src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fweb.facebook.com%2Fruaysombatcar%2Fvideos%2F1294279014095891%2F&show_text=false"
+                width="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowTransparency="false" allow="encrypted-media" allowFullScreen="true">
+            </iframe>
+        </div>
+    </div>
+    <div class="mt-2">
+        <img src="assets/about_p1.gif" alt="" style="width: 100%;margin-top: 10px;">
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-3 center" *ngFor="let item of reviewsImage">
+            <img src="{{item.reviewPart}}" alt="" style="width: 100%;margin-top: 10px;">
+        </div>
+        <div class="right w-100 mt-2">
+            <pagination [align]="true" [totalItems]="countImage" [itemsPerPage]="limitImage" [boundaryLinks]="true"
+                [maxSize]="200" [firstText]="pageFirstText" [previousText]="pagePreviousText" [nextText]="pageNextText"
+                [lastText]="pageLastText" (pageChanged)="pageChangedImage($event)">
+            </pagination>
+        </div>
+    </div>
+</div>

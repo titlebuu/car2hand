@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>รวยสมบัติคาร์เซ็นเตอร์</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="icon" href="assets/logo.png" rel="stylesheet">
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>
+<!-- <script>
+  window.fbAsyncInit = function () {
+    FB.init({
+      appId: '3199554100164378',
+      autoLogAppEvents: true,
+      xfbml: true,
+      version: 'v3.0'
+    });
+  };
+
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+</script> -->
+<!-- Load Facebook SDK for JavaScript -->
+<!-- <div id="fb-root"></div> -->
+<script>
+  window.fbAsyncInit = function () {
+    FB.init({
+      xfbml            : true,
+      version          : 'v8.0'
+    });
+  };
+
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>

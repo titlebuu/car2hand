@@ -1,0 +1,86 @@
+<div class="footer">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12 col-xs-12 col-md-12 col-lg-4 bd mg">
+                <div class="row" style="margin-top: -55px;">
+                    <div class="col-12 w-100 centers"><img src="assets/logo.png" style="width: 130px;margin-top: 55px;">
+                    </div>
+                    <div class="col-12">
+                        <div class="f1">รวยสมบัติคาร์เซ็นเตอร์</div>
+                        <div class="f2" style="text-align: left;">เปิดทำการทุกวัน : จันทร์-เสาร์ 08.00-17.00 น.</div>
+                        <div class="fy" style="text-align: left;">สาขาโพนพิสัย</div>
+                        <div class="f2" style="text-align: left;">ที่อยู่ อำเภอโพนพิสัย จังหวัดหนองคาย 43120</div>
+                        <div class="f2" style="text-align: left;">เบอร์ 092-339-6549</div>
+                        <div class="fy" style="text-align: left;">สาขาหนองคาย</div>
+                        <div class="f2" style="text-align: left;">ที่อยู่ อำเภอเมือง จังหวัดหนองคาย 43120</div>
+                        <div class="f2" style="text-align: left;">เบอร์ 084-515-2434</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xs-12 col-md-12 col-lg-4 bd mg">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="menu-footer">เกี่ยวกับเรา</div>
+                        <div class="menu-footer" [routerLink]="[ '/car' ]">รถทั้งหมด</div>
+                        <div class="menu-footer" [routerLink]="[ '/promotion' ]">โปรโมชั่น</div>
+                        <div class="menu-footer" [routerLink]="[ '/reviews' ]">รีวิว</div>
+                        <div class="menu-footer" [routerLink]="[ '/contact' ]">ติดต่อเรา</div>
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-6" *ngFor="let item of brand">
+                                <div class="menu-footer" (click)="searchByBrand(item?.brandId)">{{item?.brandNameEn}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xs-12 col-md-12 col-lg-4 mg">
+                <div style="color: #fff;font-size: 25px;">ติดต่อสอบถาม</div>
+                <div class="title-header w-100">
+                    <b>092-339-6549</b>
+                </div>
+                <div style="color: #fff;font-size: 20px;cursor: pointer;margin-top: 10px;" (click)="toFacebook1()">
+                    <span class="face"><b>f</b></span>
+                    <span style="padding-left: 40px;">รวยสมบัติคาร์เซ็นเตอร์ โพนพิสัย</span>
+                </div>
+                <div style="color: #fff;font-size: 20px;cursor: pointer;margin-top: 10px;" (click)="toFacebook2()">
+                    <span class="face"><b>f</b></span>
+                    <span style="padding-left: 40px;">รวยสมบัติคาร์เซ็นเตอร์ หนองคาย</span>
+                </div>
+                <div>
+                    <button class="btn-admin mt-5" (click)="toAdmin()"><b>สำหรับพนักงาน</b></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">Copyright 2019 www.รวยสมบัติคาร์เซ็นเตอร์.com All rights reserved.</div>
+    <div class="end-yellow"></div>
+</div>
+<div class="messanger-pc fb-customerchat" attribution=setup_tool page_id="112408630161170" theme_color="#fa3c4c"
+    logged_in_greeting="สวัสดีค่าา รวยสมบัติคาร์เซ็นเตอร์ ยินดีให้บริการค่าาา ^^ "
+    logged_out_greeting="สวัสดีค่าา รวยสมบัติคาร์เซ็นเตอร์ ยินดีให้บริการค่าาา ^^ ">
+</div>
+<div id="fb-root"></div>
+
+<div class="messanger-phone" (click)="toMessenger()">
+    <svg width="60px" height="60px" viewBox="0 0 60 60" cursor="pointer">
+        <svg x="0" y="0" width="60px" height="60px">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g>
+                    <circle fill="#fa3c4c" cx="30" cy="30" r="30"></circle>
+                    <svg x="10" y="10">
+                        <g transform="translate(0.000000, -10.000000)" fill="#FFFFFF">
+                            <g id="logo" transform="translate(0.000000, 10.000000)">
+                                <path
+                                    d="M20,0 C31.2666,0 40,8.2528 40,19.4 C40,30.5472 31.2666,38.8 20,38.8 C17.9763,38.8 16.0348,38.5327 14.2106,38.0311 C13.856,37.9335 13.4789,37.9612 13.1424,38.1098 L9.1727,39.8621 C8.1343,40.3205 6.9621,39.5819 6.9273,38.4474 L6.8184,34.8894 C6.805,34.4513 6.6078,34.0414 6.2811,33.7492 C2.3896,30.2691 0,25.2307 0,19.4 C0,8.2528 8.7334,0 20,0 Z M7.99009,25.07344 C7.42629,25.96794 8.52579,26.97594 9.36809,26.33674 L15.67879,21.54734 C16.10569,21.22334 16.69559,21.22164 17.12429,21.54314 L21.79709,25.04774 C23.19919,26.09944 25.20039,25.73014 26.13499,24.24744 L32.00999,14.92654 C32.57369,14.03204 31.47419,13.02404 30.63189,13.66324 L24.32119,18.45264 C23.89429,18.77664 23.30439,18.77834 22.87569,18.45674 L18.20299,14.95224 C16.80079,13.90064 14.79959,14.26984 13.86509,15.75264 L7.99009,25.07344 Z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                </g>
+            </g>
+        </svg>
+    </svg>
+</div>
